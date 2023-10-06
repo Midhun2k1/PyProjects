@@ -1,0 +1,8 @@
+{% extents 'base.html' %}
+{% if user is_authenticated %}
+<li><a style="color:black;">hello {{user.username}}</a></li>
+<li><a href="{% url 'SchoolApp:logout' %}">Logout</a></li>
+{% else %}
+<li><a href="{% url 'SchoolApp:register' %}">Register</a></li>
+<li><a href="{% url 'SchoolApp:login' %}">Login</a></li>
+{% endif %}

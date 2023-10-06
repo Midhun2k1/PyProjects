@@ -1,0 +1,114 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url({% static 'image/bgimage.jpg' %});
+            background-size:cover;
+        }
+        header {
+        /***background-color: #E3E3E3; ***/
+            color: #03383E;
+            text-align: center;
+            padding: 0.2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .school-description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        .school-details {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+
+
+/***Register***/
+
+
+/***    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }***/
+    .container rg {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      width: 300px;
+    }
+    .container h2 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+
+/***navbar***/
+
+.nav-item{
+          letter-spacing:.2em:
+          font-size:14px;
+          text-transform:uppercase;
+}
+
+.dropdown-item{
+          letter-spacing:.2em:
+          font-size:14px;
+          text-transform:uppercase;
+}
+
+
+
+
+
+
+.dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }

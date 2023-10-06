@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">My School Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'SchoolApp:home' %}"><i class="fa-solid fa-house"></i></a>
+        </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+          <a class="nav-link active" href="#" style="text-transform:uppercase;">Hello {{user.username}}</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'SchoolApp:logout' %}">Logout</a>
+        </li>
+          {% else %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'SchoolApp:login' %}">Login</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" href="{% url 'SchoolApp:register' %}">Register</a>
+        </li>
+          {% endif %}
+        <li class="nav-item dropdown {% if 'SchoolApp' in request.path %} active {% endif %}">
+          <a class="nav-link active dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Department
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<!--            <li><a class="dropdown-item" href="{% url 'SchoolApp:home' %}">Action</a></li>-->
+              <li>
+                  {% for cat in links %}
+              <a class="dropdown-item" href="{{cat.url}}">{{cat.name}}</a>
+                {% endfor %}
+              </li>
+<!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+    <header>
+        <h1><b>Welcome to My School Store</b></h1>
+    </header>
+    <div class="container">
+        <div class="school-description">
+            <h2>About Us</h2>
+            <p>Welcome to our school store, the ultimate hub of convenience and school spirit! Our school store is a vibrant and inviting space designed to cater to the needs of our students, staff, and community. Bursting with an array of essential supplies, spirited merchandise, and thoughtful amenities, our store is more than just a shopping destination – it's a central part of our school experience.</p>
+            <p>Step inside and you'll be greeted by neatly organized shelves stocked with everything a student might need to succeed. From stationery and textbooks to art supplies and calculators, we've got you covered. Our goal is to make sure you have easy access to the tools that enhance your learning journey.
+                But we're not just about practicality – we're about fostering school pride and a sense of belonging. Decked out in the latest school colors and emblazoned with our mascot, our spirited merchandise section offers a range of clothing, accessories, and keepsakes that allow you to proudly represent our school. Whether it's a cozy sweatshirt, a stylish cap, or a pennant to adorn your space, you'll find something to showcase your school spirit.
+                Looking for a quick energy boost between classes? Our store features a mini café corner where you can grab a snack, a refreshing drink, or a quick bite to keep you fueled and focused throughout the day.</p>
+        </div>
+        <div class="school-details">
+            <h2 style="color:#FFFFFF">Store Details</h2>
+            <p style="color:#FFFFFF"><strong>Address:</strong> 123 Main Street, Cityville</p>
+            <p style="color:#FFFFFF"><strong>Contact:</strong> info@myschool.com | (123) 456-7890</p>
+            <p style="color:#FFFFFF"><strong>Website:</strong> <a href="https://www.myschool.com">www.myschool.com</a></p>
+            <p style="color:#FFFFFF"><strong>Follow us on:</strong> <a href="https://www.facebook.com/myschool">Facebook</a> | <a href="https://www.twitter.com/myschool">Twitter</a> | <a href="https://www.instagram.com/myschool">Instagram</a></p>
+        </div>
+    </div>
+{% endblock %}
+

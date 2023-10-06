@@ -1,0 +1,18 @@
+.banner{
+    background-color:#778899;
+    height:80px;
+    margin-bottom:50px;
+}
+
+.banner-text{
+    top:10%;
+    left:50%;
+    position:absolute;
+    transform:transform;
+    color:#2F4F4F;
+    font-family:Georgia;
+}
+.card-body{
+    margin-bottom:20px;
+    background-color:#F3F2F2;
+}

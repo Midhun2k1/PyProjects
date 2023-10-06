@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div  class="banner">
+                <div class="banner-text">
+                    <h1>ToDo</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" class="p-3 shadow">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" name="task" placeholder="Task name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="priority" placeholder="Enter your task">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" name="date" placeholder="Enter your task date">
+                </div>
+                <input type="submit" class="btn btn-success">
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3 style="font-family:Gill Sans;font-size:40px;background-color:#F0D1F2;">Task to be compleled</h3>
+            {% for i in task1 %}
+            <div class="shadow card">
+                <div class="card-body">
+                    <div class="card-title" style="text-transform:uppercase;"><b>{{i.name}}</b></div>
+                    <p><b>{{i.priority}}</b></p>
+                    <p style="color:#B62C2C;"><b>{{i.date}}</b></p>
+                    <a class="btn btn-danger" href="{% url 'todoapp:delete' i.id %}">Done</a>
+                    <a class="btn btn-success" href="{% url 'todoapp:update' i.id %}">Update</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+<!--            {% for i in task1 %}-->
+<!--            {{i.name}}-->
+<!--            {{i.priority}}<br>-->
+<!--            {% endfor %}-->
